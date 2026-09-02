@@ -93,7 +93,6 @@ def solve(N, M, A, B_vec):
     return "\n".join(res)
 
 def main():
-    # Считываем весь ввод
     input_data = sys.stdin.read().split()
     if not input_data:
         return
