@@ -1,5 +1,3 @@
-import sys
-
 def int_div(a, b):
     # Целочисленное деление с усечением к нулю
     res = abs(a) // abs(b)
