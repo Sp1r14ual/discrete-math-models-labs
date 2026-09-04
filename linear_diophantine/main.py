@@ -12,7 +12,7 @@ def solve(N, M, A, B_vec):
     # B имеет N + M строк и M + 1 столбцов
     B = []
     for i in range(N):
-        row = A[i] + [B_vec[i]]
+        row = A[i] + [-B_vec[i]]
         B.append(row)
     for i in range(M):
         row = [1 if i == j else 0 for j in range(M)] + [0]
@@ -85,9 +85,9 @@ def solve(N, M, A, B_vec):
     res = [str(K)]
     for r in range(M):
         line = []
+        line.append(str(B[N + r][M]))
         for v in range(R, M):
             line.append(str(B[N + r][v]))
-        line.append(str(B[N + r][M]))
         res.append(" ".join(line))
         
     return "\n".join(res)
