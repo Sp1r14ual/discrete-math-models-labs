@@ -93,25 +93,14 @@ def solve(N, M, A, B_vec):
     return "\n".join(res)
 
 def main():
-    input_data = sys.stdin.read().split()
-    if not input_data:
-        return
-    
-    N = int(input_data[0])
-    M = int(input_data[1])
+    N, M = map(int, input().split())
     
     A = []
     B = []
-    
-    idx = 2
     for i in range(N):
-        row = []
-        for j in range(M):
-            row.append(int(input_data[idx]))
-            idx += 1
-        A.append(row)
-        B.append(int(input_data[idx]))
-        idx += 1
+        row = list(map(int, input().split()))
+        A.append(row[:M])
+        B.append(row[M])
         
     result = solve(N, M, A, B)
     print(result)
